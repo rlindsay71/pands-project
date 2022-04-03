@@ -17,3 +17,12 @@
 # it will save a histogram of each variable to png files
 # It will output a scatter plot of each pair of variables
 # It will perform some other relevant analysis.
+
+# reading in the file for testing purposes
+
+# f = open("iris.data", "r")
+# print(f.readline())
+
+irisfile = open("iris.data", "r")
+for x in irisfile:
+  print(x)
