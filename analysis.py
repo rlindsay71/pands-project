@@ -23,6 +23,44 @@
 # f = open("iris.data", "r")
 # print(f.readline())
 
-irisfile = open("iris.data", "r")
-for x in irisfile:
-  print(x)
+# irisfile = open("iris.data", "r")
+# for x in irisfile:
+  # print(x)
+
+# The following code loads the iris file into a pandas datafile and adds column headers to it.
+
+import pandas as pd
+
+df = pd.read_csv('iris.data', header = None)
+
+#print(df.to_string())
+
+df.columns = ["Sepal Length", "Sepal width", "Petal Length", "Petal width", "Iris Class"]
+
+# print(df.head(3))
+
+# this code performs some analysis on each class of Irish
+# Iris Setosa
+
+# print(df["Sepal Length"])
+# print(df.loc[df['Iris Class'] == "Iris-setosa"])
+# this code separates the Iris Setosa data into its own dataframe
+
+df_iris_setosa = df.loc[df['Iris Class'] == "Iris-setosa"]
+
+# print(df_iris_setosa)
+
+# The code calculates the mean of the Irish setosa sepal Lengths.
+
+# mean_length_sepal_setosa = df_iris_setosa["Sepal Length"].mean()
+# print(mean_length_sepal_setosa)
+# max_length_sepal_setosa = df_iris_setosa["Sepal Length"].max()
+# print(max_length_sepal_setosa)
+min_length_sepal_setosa = df_iris_setosa["Sepal Length"].min()
+print(min_length_sepal_setosa)
+
+
+
+
+
+
