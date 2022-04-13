@@ -33,31 +33,63 @@ import pandas as pd
 
 df = pd.read_csv('iris.data', header = None)
 
-#print(df.to_string())
-
 df.columns = ["Sepal Length", "Sepal width", "Petal Length", "Petal width", "Iris Class"]
 
+# code to check dataframe ok and load first 3 rows
 # print(df.head(3))
 
-# this code performs some analysis on each class of Irish
+# this code  finds the average length in cm of the iris data.
+
+# meanVal = df["Sepal Length"].mean()
+# print(meanVal)
+
+# this code  finds the mode length of the iris data.
+
+# modeVal = df["Sepal Length"].mode()
+# print(modeVal)
+
+# this code  finds the shortest length of the iris data.
+
+# minVal = df["Sepal Length"].min()
+# print(minVal)
+
+# this code  finds the maxium length of the iris data.
+
+# maxVal = df["Sepal Length"].max()
+# print(maxVal)
+
+
+# This code separates the sepal length and the class of iris into a separate dataframe
+# calculates the mean/average for each class of iris.
+
+df_sepallength = df[["Sepal Length", "Iris Class"]]
+#print(df_sepallength)
+
+meanvalue = df_sepallength.groupby("Iris Class").mean()
+print(meanvalue)
+
+
+
+
+
+
+
+
+
+
+
+
 # Iris Setosa
 
 # print(df["Sepal Length"])
 # print(df.loc[df['Iris Class'] == "Iris-setosa"])
 # this code separates the Iris Setosa data into its own dataframe
 
-df_iris_setosa = df.loc[df['Iris Class'] == "Iris-setosa"]
+# df_iris_setosa = df.loc[df['Iris Class'] == "Iris-setosa"]
 
 # print(df_iris_setosa)
 
-# The code calculates the mean of the Irish setosa sepal Lengths.
 
-# mean_length_sepal_setosa = df_iris_setosa["Sepal Length"].mean()
-# print(mean_length_sepal_setosa)
-# max_length_sepal_setosa = df_iris_setosa["Sepal Length"].max()
-# print(max_length_sepal_setosa)
-min_length_sepal_setosa = df_iris_setosa["Sepal Length"].min()
-print(min_length_sepal_setosa)
 
 
 
