@@ -17,7 +17,7 @@
 
 from isort import file
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 
 df = pd.read_csv('iris.data', header = None)
@@ -149,16 +149,26 @@ df_petalwidth = df[["Petal Width", "Iris Class"]]
 
 # calculating the median petal width within each iris group
 
-medianvalpw = df_petalwidth.groupby("Iris Class").median()
+#medianvalpw = df_petalwidth.groupby("Iris Class").median()
 # print(medianvalpw)
 
 #-----------------------------------------------------------------------------
 
 # -------Testing exporting analysis to a new text file-----------
 
-f = open("myfile.txt", "a")
-f.write("This is where I will be putting the results of my analysis!\n")
-f.write(str(medianvalpw))
-f.close()
+#f = open("myfile.txt", "a")
+#f.write("This is where I will be putting the results of my analysis!\n")
+#f.write(str(medianvalpw))
+#f.close()
+
+#------------------------------------------------------------------------------
+
+#--------showing variables to histogram charts----------------
 
 
+x = df["Sepal Length"] 
+plt.hist(x, bins = 20, color = "blue")
+plt.title("Sepal Length in cm")
+plt.xlabel("Sepal_Length_cm")
+plt.ylabel("Count")
+plt.show()
