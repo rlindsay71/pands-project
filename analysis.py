@@ -5,27 +5,13 @@
 # This dataset contains data relating to three classes of Iris plant of which there are 50 instances of 
 # of each in the dataset.
 # the atributes in the dataset relating to each instance are as follows
-# 1. sepal length in cm
-# 2. sepal width in cm
-# 3. petal length in cm
-# 4. petal width in cm
-# 5. class:
-# -- Iris Setosa
-# --Iris Versicolour
-# --Iris Virginica
-# This program will output a summary of each variable to a single text file
+# sepal length in cm, sepal width in cm, petal length in cm, petal length in cm
+# class: Iris Setosa, Iris Setosa, Iris Setosa
+# output a summary of each variable to a single text file
 # it will save a histogram of each variable to png files
 # It will output a scatter plot of each pair of variables
 # It will perform some other relevant analysis.
 
-# reading in the file for testing purposes
-
-# f = open("iris.data", "r")
-# print(f.readline())
-
-# irisfile = open("iris.data", "r")
-# for x in irisfile:
-  # print(x)
 
 # The following code loads the iris file into a pandas datafile and adds column headers to it.
 
@@ -33,7 +19,7 @@ import pandas as pd
 
 df = pd.read_csv('iris.data', header = None)
 
-df.columns = ["Sepal Length", "Sepal width", "Petal Length", "Petal width", "Iris Class"]
+df.columns = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Iris Class"]
 
 # code to check dataframe ok and load first 3 rows
 # print(df.head(3))
@@ -58,41 +44,109 @@ df.columns = ["Sepal Length", "Sepal width", "Petal Length", "Petal width", "Iri
 # maxVal = df["Sepal Length"].max()
 # print(maxVal)
 
+#---------------------------------------------------------------
+
 
 # This code separates the sepal length and the class of iris into a separate dataframe
-# calculates the mean/average for each class of iris.
+# calculates the mean/average sepal length for each class of iris.
 
 df_sepallength = df[["Sepal Length", "Iris Class"]]
 #print(df_sepallength)
 
-meanvalue = df_sepallength.groupby("Iris Class").mean()
-print(meanvalue)
+# meanvalue = df_sepallength.groupby("Iris Class").mean()
+#print(meanvalue)
+
+# Below calculates the maximum length within each class of iris.
+
+# maxvalue = df_sepallength.groupby("Iris Class").max() 
+# print(maxvalue)
+
+# The code below determines the minimum irish length within each Iris class.
+
+# minvalue = df_sepallength.groupby("Iris Class").min() 
+# print(minvalue)
+
+# The code below calculates the median(half way value) sepal length within each iris class
+
+#medianvalue = df_sepallength.groupby("Iris Class").median()
+#print(medianvalue)
 
 
+#----------------------------------------------------------------------------------------------
+
+# The following code separates the sepal width and class into its own dataframe to perform analysis on it
+# df_sepalwidth = df[["Sepal Width", "Iris Class"]]
+# print(df_sepalwidth)
 
 
+# calculating the mean sepal width within each iris group
+#meanvalsw = df_sepalwidth.groupby("Iris Class").mean()
+#print(meanvalsw)
+
+# calculating the minimum sepal width within each iris group
+#minvalsw = df_sepalwidth.groupby("Iris Class").min()
+#print(minvalsw)
+
+# calculating the maximum sepal width within each iris group
+
+#maxvalsw = df_sepalwidth.groupby("Iris Class").max()
+#print(maxvalsw)
+
+# calculating the median sepal width within each iris group
+
+# medianvalsw = df_sepalwidth.groupby("Iris Class").median()
+# print(medianvalsw)
 
 
+#------------------------------------------------------------------------------------------
+
+# This code separates the petal length and the class of iris into a separate dataframe
+# calculates the mean/average petal length for each class of iris.
+
+# df_petallength = df[["Petal Length", "Iris Class"]]
+# print(df_petallength)
+
+# meanvaluepl = df_petallength.groupby("Iris Class").mean()
+#print(meanvaluepl)
+
+# Below calculates the maximum petal length within each class of iris.
+
+# maxvaluepl = df_petallength.groupby("Iris Class").max() 
+# print(maxvaluepl)
+
+# The code below determines the minimum petal length within each Iris class.
+
+# minvaluepl = df_petallength.groupby("Iris Class").min() 
+# print(minvaluepl)
+
+# The code below calculates the median(half way value) sepal length within each iris class
+
+# medianvaluepl = df_petallength.groupby("Iris Class").median()
+# print(medianvaluepl)
+
+#------------------------------------------------------------------------
+
+# The following code separates the Petal width and class into its own dataframe to perform analysis on it
+df_petalwidth = df[["Petal Width", "Iris Class"]]
+#print(df_petalwidth)
 
 
+# calculating the mean petal width within each iris group
+#meanvalpw = df_petalwidth.groupby("Iris Class").mean()
+#print(meanvalpw)
 
+# calculating the minimum petal width within each iris group
+#minvalpw = df_petalwidth.groupby("Iris Class").min()
+#print(minvalpw)
 
+# calculating the maximum petal width within each iris group
 
+#maxvalpw = df_petalwidth.groupby("Iris Class").max()
+#print(maxvalpw)
 
-# Iris Setosa
+# calculating the median petal width within each iris group
 
-# print(df["Sepal Length"])
-# print(df.loc[df['Iris Class'] == "Iris-setosa"])
-# this code separates the Iris Setosa data into its own dataframe
+medianvalpw = df_petalwidth.groupby("Iris Class").median()
+print(medianvalpw)
 
-# df_iris_setosa = df.loc[df['Iris Class'] == "Iris-setosa"]
-
-# print(df_iris_setosa)
-
-
-
-
-
-
-
-
+#-----------------------------------------------------------------------------
