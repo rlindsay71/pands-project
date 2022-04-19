@@ -15,7 +15,10 @@
 
 # The following code loads the iris file into a pandas datafile and adds column headers to it.
 
+from isort import file
 import pandas as pd
+import matplotlib as plt
+
 
 df = pd.read_csv('iris.data', header = None)
 
@@ -147,6 +150,15 @@ df_petalwidth = df[["Petal Width", "Iris Class"]]
 # calculating the median petal width within each iris group
 
 medianvalpw = df_petalwidth.groupby("Iris Class").median()
-print(medianvalpw)
+# print(medianvalpw)
 
 #-----------------------------------------------------------------------------
+
+# -------Testing exporting analysis to a new text file-----------
+
+f = open("myfile.txt", "a")
+f.write("This is where I will be putting the results of my analysis!\n")
+f.write(str(medianvalpw))
+f.close()
+
+
