@@ -189,8 +189,25 @@ f.write(str(meanvalue) + '\n\n')
 
 f.close()
 
-#---------------------------------------------------
+#-----------------scatterplot-------------------------
+# The following code generates a scatter plot for the widths and heights of the iris petals
+# and for the widths and lengths of the iris sepals.
 
+e = df["Sepal Length"] 
+f = df["Sepal Width"] 
+g = df["Petal Length"]
+h = df["Petal Width"]
+
+
+plt.scatter(e, f)
+plt.savefig("Scatterplot_Sepal.png")
+plt.clf()
+#plt.show()
+
+plt.scatter(g, h)
+plt.savefig("Scatterplot_Petal.png")
+plt.clf()
+#plt.show()
 
 
 
