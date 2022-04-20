@@ -57,12 +57,12 @@ medianvalue = df_sepallength.groupby("Iris Class").median()
 # The following code creates a histogram of the sepal lengths for all the classes
 
 x = df["Sepal Length"] 
-plt.hist(x, bins = 20, color = "blue")
+plt.hist(x, bins = 10, color = "blue", edgecolor='black', linewidth=1)
 plt.title("Sepal Length in cm")
 plt.xlabel("Sepal_Length_cm")
 plt.ylabel("Count") 
-plt.savefig("Sepal_Length.jpg")
-#plt.show()
+plt.savefig("Sepal_Length.png")
+plt.clf()
 
 
 
@@ -94,12 +94,12 @@ plt.savefig("Sepal_Length.jpg")
 # The following code creates a histogram of the sepal widths for all the classes
 
 y = df["Sepal Width"] 
-plt.hist(y, bins = 20, color = "green")
+plt.hist(y, bins = 10, color = "green", edgecolor='black', linewidth=1)
 plt.title("Sepal Width in cm")
 plt.xlabel("Sepal_Width_cm")
 plt.ylabel("Count")
-plt.savefig("Sepal_Width.jpg")
-#plt.show()
+plt.savefig("Sepal_Width.png")
+plt.clf()
 
 #------------------------------------------------------------------------------------------
 
@@ -130,12 +130,12 @@ plt.savefig("Sepal_Width.jpg")
 
 
 z = df["Petal Length"] 
-plt.hist(z, bins = 20, color = "yellow")
+plt.hist(z, bins = 10, color = "yellow", edgecolor='black', linewidth=1)
 plt.title("Petal Length in cm")
 plt.xlabel("Petal_Length_cm")
 plt.ylabel("Count")
-plt.savefig("Petal_Length.jpg")
-#plt.show()
+plt.savefig("Petal_Length.png")
+plt.clf()
 
 #------------------------------------------------------------------------
 
@@ -163,12 +163,12 @@ plt.savefig("Petal_Length.jpg")
 # print(medianvalpw)
 
 w = df["Petal Width"] 
-plt.hist(w, bins = 20, color = "red")
+plt.hist(w, bins = 10, color = "red", edgecolor='black', linewidth=1)
 plt.title("Petal width in cm")
 plt.xlabel("Petal_width_cm")
 plt.ylabel("Count")
-plt.savefig("Petal_Width.jpg")
-#plt.show()
+plt.savefig("Petal_Width.png")
+plt.clf()
 
 
 #-----------------------------------------------------------------------------
