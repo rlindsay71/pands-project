@@ -15,7 +15,7 @@
 
 # The following code loads the iris file into a pandas datafile and adds column headers to it.
 
-from isort import file
+#from isort import file
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -27,33 +27,13 @@ df.columns = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Iri
 # code to check dataframe ok and load first 3 rows
 # print(df.head(3))
 
-# this code  finds the average length in cm of the iris data.
 
-# meanVal = df["Sepal Length"].mean()
-# print(meanVal)
-
-# this code  finds the mode length of the iris data.
-
-# modeVal = df["Sepal Length"].mode()
-# print(modeVal)
-
-# this code  finds the shortest length of the iris data.
-
-# minVal = df["Sepal Length"].min()
-# print(minVal)
-
-# this code  finds the maxium length of the iris data.
-
-# maxVal = df["Sepal Length"].max()
-# print(maxVal)
-
-#---------------------------------------------------------------
 
 
 # This code separates the sepal length and the class of iris into a separate dataframe
 # calculates the mean/average sepal length for each class of iris.
 
-df_sepallength = df[["Sepal Length", "Iris Class"]]
+#df_sepallength = df[["Sepal Length", "Iris Class"]]
 #print(df_sepallength)
 
 # meanvalue = df_sepallength.groupby("Iris Class").mean()
@@ -73,6 +53,17 @@ df_sepallength = df[["Sepal Length", "Iris Class"]]
 
 #medianvalue = df_sepallength.groupby("Iris Class").median()
 #print(medianvalue)
+
+# The following code creates a histogram of the sepal lengths for all the classes
+
+x = df["Sepal Length"] 
+plt.hist(x, bins = 20)
+plt.title("Sepal Length in cm")
+plt.xlabel("Sepal_Length_cm")
+plt.ylabel("Count") 
+plt.savefig("Sepal_Length.jpg")
+#plt.show()
+
 
 
 #----------------------------------------------------------------------------------------------
@@ -100,6 +91,15 @@ df_sepallength = df[["Sepal Length", "Iris Class"]]
 # medianvalsw = df_sepalwidth.groupby("Iris Class").median()
 # print(medianvalsw)
 
+# The following code creates a histogram of the sepal widths for all the classes
+
+y = df["Sepal Width"] 
+plt.hist(y, bins = 20, color = "green")
+plt.title("Sepal Width in cm")
+plt.xlabel("Sepal_Width_cm")
+plt.ylabel("Count")
+plt.savefig("Sepal_Width.jpg")
+#plt.show()
 
 #------------------------------------------------------------------------------------------
 
@@ -127,10 +127,20 @@ df_sepallength = df[["Sepal Length", "Iris Class"]]
 # medianvaluepl = df_petallength.groupby("Iris Class").median()
 # print(medianvaluepl)
 
+
+
+z = df["Petal Length"] 
+plt.hist(z, bins = 20, color = "yellow")
+plt.title("Petal Length in cm")
+plt.xlabel("Petal_Length_cm")
+plt.ylabel("Count")
+plt.savefig("Petal_Length.jpg")
+#plt.show()
+
 #------------------------------------------------------------------------
 
 # The following code separates the Petal width and class into its own dataframe to perform analysis on it
-df_petalwidth = df[["Petal Width", "Iris Class"]]
+# df_petalwidth = df[["Petal Width", "Iris Class"]]
 #print(df_petalwidth)
 
 
@@ -152,6 +162,17 @@ df_petalwidth = df[["Petal Width", "Iris Class"]]
 #medianvalpw = df_petalwidth.groupby("Iris Class").median()
 # print(medianvalpw)
 
+w = df["Petal Width"] 
+plt.hist(w, bins = 20, color = "red")
+plt.title("Petal width in cm")
+plt.xlabel("Petal_width_cm")
+plt.ylabel("Count")
+plt.savefig("Petal_Width.jpg")
+#plt.show()
+
+
+
+
 #-----------------------------------------------------------------------------
 
 # -------Testing exporting analysis to a new text file-----------
@@ -163,12 +184,6 @@ df_petalwidth = df[["Petal Width", "Iris Class"]]
 
 #------------------------------------------------------------------------------
 
-#--------showing variables to histogram charts----------------
 
 
-x = df["Sepal Length"] 
-plt.hist(x, bins = 20, color = "blue")
-plt.title("Sepal Length in cm")
-plt.xlabel("Sepal_Length_cm")
-plt.ylabel("Count")
-plt.show()
+
