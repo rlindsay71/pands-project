@@ -33,31 +33,31 @@ df.columns = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Iri
 # This code separates the sepal length and the class of iris into a separate dataframe
 # calculates the mean/average sepal length for each class of iris.
 
-#df_sepallength = df[["Sepal Length", "Iris Class"]]
+df_sepallength = df[["Sepal Length", "Iris Class"]]
 #print(df_sepallength)
 
-# meanvalue = df_sepallength.groupby("Iris Class").mean()
+meanvalue = df_sepallength.groupby("Iris Class").mean()
 #print(meanvalue)
 
 # Below calculates the maximum length within each class of iris.
 
-# maxvalue = df_sepallength.groupby("Iris Class").max() 
+maxvalue = df_sepallength.groupby("Iris Class").max() 
 # print(maxvalue)
 
 # The code below determines the minimum irish length within each Iris class.
 
-# minvalue = df_sepallength.groupby("Iris Class").min() 
+minvalue = df_sepallength.groupby("Iris Class").min() 
 # print(minvalue)
 
 # The code below calculates the median(half way value) sepal length within each iris class
 
-#medianvalue = df_sepallength.groupby("Iris Class").median()
+medianvalue = df_sepallength.groupby("Iris Class").median()
 #print(medianvalue)
 
 # The following code creates a histogram of the sepal lengths for all the classes
 
 x = df["Sepal Length"] 
-plt.hist(x, bins = 20)
+plt.hist(x, bins = 20, color = "blue")
 plt.title("Sepal Length in cm")
 plt.xlabel("Sepal_Length_cm")
 plt.ylabel("Count") 
@@ -171,18 +171,25 @@ plt.savefig("Petal_Width.jpg")
 #plt.show()
 
 
-
-
 #-----------------------------------------------------------------------------
 
 # -------Testing exporting analysis to a new text file-----------
 
-#f = open("myfile.txt", "a")
-#f.write("This is where I will be putting the results of my analysis!\n")
-#f.write(str(medianvalpw))
-#f.close()
+f = open("myfile.txt", "a")
+f.write("Analysis of the Iris Fisher Data Set!\n")
+f.write("Below are the min, max, mean and median values of the Sepal Length grouped by Iris class\n\n")
+f.write("Maximum Values per class\n")
+f.write(str(maxvalue) + '\n\n')
+f.write("Median Values per class\n")
+f.write(str(medianvalue) + '\n\n')
+f.write("Minimum Values per class\n")
+f.write(str(minvalue) + '\n\n')
+f.write("Mean Values per class\n")
+f.write(str(meanvalue) + '\n\n')
 
-#------------------------------------------------------------------------------
+f.close()
+
+#---------------------------------------------------
 
 
 
