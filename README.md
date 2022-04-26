@@ -28,4 +28,16 @@ e.g df_sepallength = df[["Sepal Length", "Iris Class"]]
 and achieved this by passing the column names in as an argument to the dataframe and creating a new dataframe from that.
 then I used the mean, max, min and median functions to created variables from these dataframes to hold my analysis.
 to be continued....
+
+Resources:
+https://www.w3schools.com/python/
+I found this website terrific for general learning of python syntax to supplement my GMIT lectures.
+https://www.w3schools.com/python/python_file_write.asp
+This section of w3schools helped a lot with the syntax of how to write to a file. GMIT
+https://www.w3schools.com/python/pandas/default.asp
+This module in W3 schools was a very helpful resource on how to use pandas, read and write to text files and manipulate dataframes.
+The extra pandas lecture on the GMIT course was a great help trying to get to grips with pandas and its features.
+to be continued......
+
+
  
