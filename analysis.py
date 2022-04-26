@@ -11,48 +11,35 @@
 # it will save a histogram of each variable to png files
 # It will output a scatter plot of each pair of variables
 # It will perform some other relevant analysis.
+# For more information on this project including the resources used please
+# refer to the read me file.
 
 
-# The following code loads the iris file into a pandas datafile and adds column headers to it.
-
-#from isort import file
 import pandas as pd
 import matplotlib.pyplot as plt
+#----------------------------------------------------------------------------------------
 
+# The following code loads the iris file into a pandas dataframe and adds column headers to it.
 
 df = pd.read_csv('iris.data', header = None)
 
 df.columns = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Iris Class"]
 
-# code to check dataframe ok and load first 3 rows
-# print(df.head(3))
-
-
-
+#------------------------------------------------------------------------------------
 
 # This code separates the sepal length and the class of iris into a separate dataframe
-# calculates the mean/average sepal length for each class of iris.
 
 df_sepallength = df[["Sepal Length", "Iris Class"]]
-#print(df_sepallength)
+
+# calculates the mean, maximum, minimum and median sepal length value for each class of iris.
 
 meanvalue = df_sepallength.groupby("Iris Class").mean()
-#print(meanvalue)
-
-# Below calculates the maximum length within each class of iris.
-
 maxvalue = df_sepallength.groupby("Iris Class").max() 
-# print(maxvalue)
-
-# The code below determines the minimum irish length within each Iris class.
-
 minvalue = df_sepallength.groupby("Iris Class").min() 
-# print(minvalue)
-
-# The code below calculates the median(half way value) sepal length within each iris class
-
 medianvalue = df_sepallength.groupby("Iris Class").median()
-#print(medianvalue)
+
+
+#-------------------------------------------------------------------------------------------
 
 # The following code creates a histogram of the sepal lengths for all the classes
 
@@ -64,32 +51,19 @@ plt.ylabel("Count")
 plt.savefig("Sepal_Length.png")
 plt.clf()
 
-
-
 #----------------------------------------------------------------------------------------------
 
 # The following code separates the sepal width and class into its own dataframe to perform analysis on it
-# df_sepalwidth = df[["Sepal Width", "Iris Class"]]
-# print(df_sepalwidth)
+ df_sepalwidth = df[["Sepal Width", "Iris Class"]]
 
+# calculating the mean, maximum, minimum and median sepal width within each iris group
+meanvalsw = df_sepalwidth.groupby("Iris Class").mean()
+minvalsw = df_sepalwidth.groupby("Iris Class").min()
+maxvalsw = df_sepalwidth.groupby("Iris Class").max()
+medianvalsw = df_sepalwidth.groupby("Iris Class").median()
 
-# calculating the mean sepal width within each iris group
-#meanvalsw = df_sepalwidth.groupby("Iris Class").mean()
-#print(meanvalsw)
+ #---------------------------------------------------------------------------------------
 
-# calculating the minimum sepal width within each iris group
-#minvalsw = df_sepalwidth.groupby("Iris Class").min()
-#print(minvalsw)
-
-# calculating the maximum sepal width within each iris group
-
-#maxvalsw = df_sepalwidth.groupby("Iris Class").max()
-#print(maxvalsw)
-
-# calculating the median sepal width within each iris group
-
-# medianvalsw = df_sepalwidth.groupby("Iris Class").median()
-# print(medianvalsw)
 
 # The following code creates a histogram of the sepal widths for all the classes
 
@@ -104,30 +78,20 @@ plt.clf()
 #------------------------------------------------------------------------------------------
 
 # This code separates the petal length and the class of iris into a separate dataframe
-# calculates the mean/average petal length for each class of iris.
-
-# df_petallength = df[["Petal Length", "Iris Class"]]
-# print(df_petallength)
-
-# meanvaluepl = df_petallength.groupby("Iris Class").mean()
-#print(meanvaluepl)
-
-# Below calculates the maximum petal length within each class of iris.
-
-# maxvaluepl = df_petallength.groupby("Iris Class").max() 
-# print(maxvaluepl)
-
-# The code below determines the minimum petal length within each Iris class.
-
-# minvaluepl = df_petallength.groupby("Iris Class").min() 
-# print(minvaluepl)
-
-# The code below calculates the median(half way value) sepal length within each iris class
-
-# medianvaluepl = df_petallength.groupby("Iris Class").median()
-# print(medianvaluepl)
 
 
+ df_petallength = df[["Petal Length", "Iris Class"]]
+
+# calculates the mean, maximum, minimum and median petal length for each class of iris.
+
+ meanvaluepl = df_petallength.groupby("Iris Class").mean()
+ maxvaluepl = df_petallength.groupby("Iris Class").max() 
+ minvaluepl = df_petallength.groupby("Iris Class").min() 
+medianvaluepl = df_petallength.groupby("Iris Class").median()
+
+
+#-------------------------------------------------------------------------------------------
+# The following code creates a histogram of the petal length of all the iris classes.
 
 z = df["Petal Length"] 
 plt.hist(z, bins = 10, color = "yellow", edgecolor='black', linewidth=1)
@@ -140,27 +104,18 @@ plt.clf()
 #------------------------------------------------------------------------
 
 # The following code separates the Petal width and class into its own dataframe to perform analysis on it
-# df_petalwidth = df[["Petal Width", "Iris Class"]]
-#print(df_petalwidth)
+ df_petalwidth = df[["Petal Width", "Iris Class"]]
 
 
-# calculating the mean petal width within each iris group
-#meanvalpw = df_petalwidth.groupby("Iris Class").mean()
-#print(meanvalpw)
+# calculating the mean, maximum, minimum and median petal width within each iris group
+meanvalpw = df_petalwidth.groupby("Iris Class").mean()
+minvalpw = df_petalwidth.groupby("Iris Class").min()
+maxvalpw = df_petalwidth.groupby("Iris Class").max()
+medianvalpw = df_petalwidth.groupby("Iris Class").median()
 
-# calculating the minimum petal width within each iris group
-#minvalpw = df_petalwidth.groupby("Iris Class").min()
-#print(minvalpw)
+#---------------------------------------------------------------------
+# The following code creates a histogram of the petal widths of all the iris plants.
 
-# calculating the maximum petal width within each iris group
-
-#maxvalpw = df_petalwidth.groupby("Iris Class").max()
-#print(maxvalpw)
-
-# calculating the median petal width within each iris group
-
-#medianvalpw = df_petalwidth.groupby("Iris Class").median()
-# print(medianvalpw)
 
 w = df["Petal Width"] 
 plt.hist(w, bins = 10, color = "red", edgecolor='black', linewidth=1)
@@ -173,21 +128,25 @@ plt.clf()
 
 #-----------------------------------------------------------------------------
 
-# -------Testing exporting analysis to a new text file-----------
+# -------Writing results to a text file-----------
 
 f = open("myfile.txt", "a")
 f.write("Analysis of the Iris Fisher Data Set!\n")
 f.write("Below are the min, max, mean and median values of the Sepal Length grouped by Iris class\n\n")
-f.write("Maximum Values per class\n")
+f.write("Maximum sepal length Value per class\n")
 f.write(str(maxvalue) + '\n\n')
-f.write("Median Values per class\n")
+f.write("Median sepal length per class\n")
 f.write(str(medianvalue) + '\n\n')
-f.write("Minimum Values per class\n")
+f.write("Minimum sepal length  per class\n")
 f.write(str(minvalue) + '\n\n')
-f.write("Mean Values per class\n")
+f.write("Mean sepal length  per class\n")
 f.write(str(meanvalue) + '\n\n')
-
+f.write("It can be seen by the above analysis that the Iris-virginica class of iris tend to have the\n")
+f.write("the longest sepals, followed by Iris-versicolor with Iris-setosa being the shortest. \n")
 f.close()
+
+
+
 
 #-----------------scatterplot-------------------------
 # The following code generates a scatter plot for the widths and heights of the iris petals

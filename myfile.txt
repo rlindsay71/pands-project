@@ -1,124 +1,33 @@
 Analysis of the Iris Fisher Data Set!
 Below are the min, max, mean and median values of the Sepal Length grouped by Iris class
 
-Maximum Values per class
+Maximum sepal length Value per class
                  Sepal Length
 Iris Class                   
 Iris-setosa               5.8
 Iris-versicolor           7.0
 Iris-virginica            7.9
 
-Median Values per class
+Median sepal length per class
                  Sepal Length
 Iris Class                   
 Iris-setosa               5.0
 Iris-versicolor           5.9
 Iris-virginica            6.5
 
-Minimum Values per class
+Minimum sepal length  per class
                  Sepal Length
 Iris Class                   
 Iris-setosa               4.3
 Iris-versicolor           4.9
 Iris-virginica            4.9
 
-Mean Values per class
+Mean sepal length  per class
                  Sepal Length
 Iris Class                   
 Iris-setosa             5.006
 Iris-versicolor         5.936
 Iris-virginica          6.588
 
-Analysis of the Iris Fisher Data Set!
-Below are the min, max, mean and median values of the Sepal Length grouped by Iris class
-
-Maximum Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa               5.8
-Iris-versicolor           7.0
-Iris-virginica            7.9
-
-Median Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa               5.0
-Iris-versicolor           5.9
-Iris-virginica            6.5
-
-Minimum Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa               4.3
-Iris-versicolor           4.9
-Iris-virginica            4.9
-
-Mean Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa             5.006
-Iris-versicolor         5.936
-Iris-virginica          6.588
-
-Analysis of the Iris Fisher Data Set!
-Below are the min, max, mean and median values of the Sepal Length grouped by Iris class
-
-Maximum Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa               5.8
-Iris-versicolor           7.0
-Iris-virginica            7.9
-
-Median Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa               5.0
-Iris-versicolor           5.9
-Iris-virginica            6.5
-
-Minimum Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa               4.3
-Iris-versicolor           4.9
-Iris-virginica            4.9
-
-Mean Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa             5.006
-Iris-versicolor         5.936
-Iris-virginica          6.588
-
-Analysis of the Iris Fisher Data Set!
-Below are the min, max, mean and median values of the Sepal Length grouped by Iris class
-
-Maximum Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa               5.8
-Iris-versicolor           7.0
-Iris-virginica            7.9
-
-Median Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa               5.0
-Iris-versicolor           5.9
-Iris-virginica            6.5
-
-Minimum Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa               4.3
-Iris-versicolor           4.9
-Iris-virginica            4.9
-
-Mean Values per class
-                 Sepal Length
-Iris Class                   
-Iris-setosa             5.006
-Iris-versicolor         5.936
-Iris-virginica          6.588
-
+It can be seen by the above analysis that the Iris-virginica class of iris tend to have the
+the longest sepals, followed by Iris-versicolor with Iris-setosa being the shortest. 
