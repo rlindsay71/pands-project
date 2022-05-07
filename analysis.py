@@ -27,7 +27,6 @@ df = pd.read_csv('iris.data', header = None)
 
 df.columns = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Iris Class"]
 
-#------------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
 # The following data gives a summary description of the entire iris table
@@ -37,10 +36,11 @@ df.columns = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Iri
 summary = df.describe()
 summary = summary.transpose()
 summary.head()
-print(summary.head())
 
 
-# The following code loads each class of iris into its own dataframe to perform analysis on
+# The following code loads each class of iris into its own dataframe to perform analysis on it and
+# then uses the describe() function of pandas dataframes to output the statistical information needed
+# and assigns the information to variables which will be output to a text file further down the code.
 #------------------------------------------------------------------------------------------
 
 # Iris Setosa
@@ -48,7 +48,7 @@ print(summary.head())
 iris_setosa = df[df['Iris Class'] == "Iris-setosa"]    
 setosa_summary = iris_setosa.describe()
 setosa_summary = setosa_summary.transpose()
-print(setosa_summary.head())
+
 
 #--------------------------------------------------------
 
@@ -57,7 +57,7 @@ print(setosa_summary.head())
 iris_versicolor = df[df['Iris Class'] == "Iris-versicolor"]    
 versicolor_summary = iris_versicolor.describe()
 versicolor_summary = versicolor_summary.transpose()
-print(versicolor_summary.head())
+
 #---------------------------------------------------------
 
 # Iris Virginica
@@ -65,14 +65,14 @@ print(versicolor_summary.head())
 iris_virginica = df[df['Iris Class'] == "Iris-virginica"]    
 virginica_summary = iris_virginica.describe()
 virginica_summary = virginica_summary.transpose()
-print(virginica_summary.head())
+
 
 #---------------------------------------------------------
 
 # The following code reveals the correlations between the different variables
 
 correlations = df.groupby("Iris Class").corr()
-print(correlations)
+
 
 #------------------------------------------------------------------------
 
@@ -187,12 +187,10 @@ h = df["Petal Width"]
 
 sns.scatterplot(data=df, x="Sepal Length", y="Sepal Width", hue="Iris Class")
 plt.savefig("Scatterplot_Sepal.png")
-#plt.show()
 plt.clf()
 
 sns.scatterplot(data=df, x="Petal Length", y="Petal Width", hue="Iris Class")
 plt.savefig("Scatterplot_Petal.png")
-#plt.show()
 plt.clf()
 
 
