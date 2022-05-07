@@ -27,20 +27,42 @@ df.columns = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Iri
 
 #------------------------------------------------------------------------------------
 
-# This code separates the sepal length and the class of iris into a separate dataframe
+#-------------------------------------------------------------------------------
+# The following data gives a summary description of the entire iris table
+# it transposes the headings into nice side column and uses the describe function
+# to give the main statistics of the data set ----------
 
-df_sepallength = df[["Sepal Length", "Iris Class"]]
-
-# calculates the mean, maximum, minimum and median sepal length value for each class of iris
-# and sets these up as variables to be read to the text file later.
-
-meanvalue = df_sepallength.groupby("Iris Class").mean()
-maxvalue = df_sepallength.groupby("Iris Class").max() 
-minvalue = df_sepallength.groupby("Iris Class").min() 
-medianvalue = df_sepallength.groupby("Iris Class").median()
+summary = df.describe()
+summary = summary.transpose()
+summary.head()
+print(summary.head())
 
 
-#-------------------------------------------------------------------------------------------
+# The following code loads each class of iris into its own dataframe to perform analysis on
+# datafram for iris_setosa
+
+iris_setosa = df[df['Iris Class'] == "Iris-setosa"]    
+setosa_summary = iris_setosa.describe()
+setosa_summary = setosa_summary.transpose()
+print(setosa_summary.head())
+
+#--------------------------------------------------------
+
+iris_versicolor = df[df['Iris Class'] == "Iris-versicolor"]    
+versicolor_summary = iris_versicolor.describe()
+versicolor_summary = versicolor_summary.transpose()
+print(versicolor_summary.head())
+#---------------------------------------------------------
+
+iris_virginica = df[df['Iris Class'] == "Iris-virginica"]    
+virginica_summary = iris_virginica.describe()
+virginica_summary = virginica_summary.transpose()
+print(virginica_summary.head())
+
+#---------------------------------------------------------
+
+
+
 
 # The following code creates a histogram of the sepal lengths for all the classes
 
@@ -52,20 +74,7 @@ plt.ylabel("Count")
 plt.savefig("Sepal_Length.png")
 plt.clf()
 
-#----------------------------------------------------------------------------------------------
 
-# The following code separates the sepal width and class into its own dataframe to perform analysis on it
-df_sepalwidth = df[["Sepal Width", "Iris Class"]]
-
-# calculating the mean, maximum, minimum and median sepal width within each iris group
-# and sets these up as variables to be written later to the text file
-
-meanvalsw = df_sepalwidth.groupby("Iris Class").mean()
-minvalsw = df_sepalwidth.groupby("Iris Class").min()
-maxvalsw = df_sepalwidth.groupby("Iris Class").max()
-medianvalsw = df_sepalwidth.groupby("Iris Class").median()
-
- #---------------------------------------------------------------------------------------
 
 
 # The following code creates a histogram of the sepal widths for all the classes
@@ -78,20 +87,7 @@ plt.ylabel("Count")
 plt.savefig("Sepal_Width.png")
 plt.clf()
 
-#------------------------------------------------------------------------------------------
 
-# This code separates the petal length and the class of iris into a separate dataframe
-
-
-df_petallength = df[["Petal Length", "Iris Class"]]
-
-# calculates the mean, maximum, minimum and median petal length for each class of iris
-# and sets these up as variables to be written later to the text file
-
-meanvaluepl = df_petallength.groupby("Iris Class").mean()
-maxvaluepl = df_petallength.groupby("Iris Class").max() 
-minvaluepl = df_petallength.groupby("Iris Class").min() 
-medianvaluepl = df_petallength.groupby("Iris Class").median()
 
 
 #-------------------------------------------------------------------------------------------
@@ -106,17 +102,6 @@ plt.savefig("Petal_Length.png")
 plt.clf()
 
 #------------------------------------------------------------------------
-
-# The following code separates the Petal width and class into its own dataframe to perform analysis on it
-df_petalwidth = df[["Petal Width", "Iris Class"]]
-
-
-# calculating the mean, maximum, minimum and median petal width within each iris group
-# and sets these up as variables to be written later to the text file.
-meanvalpw = df_petalwidth.groupby("Iris Class").mean()
-minvalpw = df_petalwidth.groupby("Iris Class").min()
-maxvalpw = df_petalwidth.groupby("Iris Class").max()
-medianvalpw = df_petalwidth.groupby("Iris Class").median()
 
 #---------------------------------------------------------------------
 # The following code creates a histogram of the petal widths of all the iris plants.
@@ -137,64 +122,19 @@ plt.clf()
 # In the code below, the variables declared earlier in the program are output to a text file.
 #----Sepal Length analysis written to file.---------------------------------
 
-f = open("myfile.txt", "a")
+f = open("datafile.txt", "a")
 f.write("Analysis of the Iris Fisher Data Set!\n")
-f.write("Below are the min, max, mean and median values of the Sepal Length grouped by Iris class\n\n")
-f.write("Maximum sepal length Value per class\n")
-f.write(str(maxvalue) + '\n\n')
-f.write("Median sepal length per class\n")
-f.write(str(medianvalue) + '\n\n')
-f.write("Minimum sepal length  per class\n")
-f.write(str(minvalue) + '\n\n')
-f.write("Mean sepal length  per class\n")
-f.write(str(meanvalue) + '\n\n')
-f.write("It can be seen by the above analysis that the Iris-virginica class of iris tend to have the\n")
-f.write("the longest sepals, followed by Iris-versicolor with Iris-setosa being the shortest. \n\n\n")
+f.write("Below is a statistical description of the complete iris data set\n\n")
+f.write(str(summary.head()) + '\n\n')
 
-#----Sepal width analysis written to file.---------------------------------
+f.write("Below is a statistical description of the iris setosa species\n\n")
+f.write(str(setosa_summary.head()) + '\n\n')
 
-f.write("Below are the min, max, mean and median values of the Sepal Widths grouped by Iris class\n\n")
-f.write("Maximum sepal width Value per class\n")
-f.write(str(maxvalsw) + '\n\n')
-f.write("Median sepal width per class\n")
-f.write(str(medianvalsw) + '\n\n')
-f.write("Minimum sepal width  per class\n")
-f.write(str(minvalsw) + '\n\n')
-f.write("Mean sepal width  per class\n")
-f.write(str(meanvalsw) + '\n\n')
-f.write("It can be seen by the above analysis that the Iris-setosa class of iris tend to have the\n")
-f.write("the widest sepals, even though they are normally shorter than the other classes of iris. \n\n\n")
+f.write("Below is a statistical description of the iris versicolor species\n\n")
+f.write(str(versicolor_summary.head()) + '\n\n')
 
-#----Petal Length analysis written to file.---------------------------------
-
-f.write("Below are the min, max, mean and median values of the petal lengths grouped by Iris class\n\n")
-f.write("Maximum petal length Value per class\n")
-f.write(str(maxvaluepl) + '\n\n')
-f.write("Median petal length per class\n")
-f.write(str(medianvaluepl) + '\n\n')
-f.write("Minimum petal length  per class\n")
-f.write(str(minvaluepl) + '\n\n')
-f.write("Mean petal length  per class\n")
-f.write(str(meanvaluepl) + '\n\n')
-f.write("It can be seen by the above analysis that the Iris-virginica class of iris obviously tend to have\n")
-f.write("the longest petals, followed not that far behind by Iris-versicolor, but \n")
-f.write("Iris-setosa have quite significantly shorter length petals than the other classes \n")
-
-#----Petal width analysis written to file.---------------------------------
-
-
-f.write("Below are the min, max, mean and median values of the petal widths grouped by Iris class\n\n")
-f.write("Maximum petal width Value per class\n")
-f.write(str(maxvalpw) + '\n\n')
-f.write("Median petal width per class\n")
-f.write(str(medianvalpw) + '\n\n')
-f.write("Minimum petal width  per class\n")
-f.write(str(minvalpw) + '\n\n')
-f.write("Mean petal width  per class\n")
-f.write(str(meanvalpw) + '\n\n')
-f.write("It can be seen by the above analysis that the Iris-virginica  class of iris obviously tend to have\n")
-f.write("the widest petals, followed not that far behind by Iris-versicolor, but \n")
-f.write("Iris-setosa have quite significantly narrower petals than the other classes \n")
+f.write("Below is a statistical description of the iris virginica species\n\n")
+f.write(str(virginica_summary.head()) + '\n\n')
 
 
 f.close()
@@ -222,6 +162,7 @@ plt.scatter(g, h)
 plt.savefig("Scatterplot_Petal.png")
 plt.clf()
 #plt.show()
+
 
 
 
