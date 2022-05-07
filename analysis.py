@@ -8,6 +8,7 @@
 # sepal length in cm, sepal width in cm, petal length in cm, petal length in cm
 # class: Iris Setosa, Iris Setosa, Iris Setosa
 # output a summary of each variable to a single text file
+
 # it will save a histogram of each variable to png files
 # It will output a scatter plot of each pair of variables
 # It will perform some other relevant analysis.
@@ -60,6 +61,21 @@ virginica_summary = virginica_summary.transpose()
 print(virginica_summary.head())
 
 #---------------------------------------------------------
+
+# The following code reveals the correlations between the different variables
+
+correlations = df.groupby("Iris Class").corr()
+print(correlations)
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -135,6 +151,9 @@ f.write(str(versicolor_summary.head()) + '\n\n')
 
 f.write("Below is a statistical description of the iris virginica species\n\n")
 f.write(str(virginica_summary.head()) + '\n\n')
+
+f.write("The following code shows the correlation coefficients between different pairs of variables\n\n")
+f.write(str(correlations))
 
 
 f.close()

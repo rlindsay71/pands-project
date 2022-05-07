@@ -31,3 +31,19 @@ Sepal Width    50.0  2.974  0.322497  2.2  2.800  3.00  3.175  3.8
 Petal Length   50.0  5.552  0.551895  4.5  5.100  5.55  5.875  6.9
 Petal Width    50.0  2.026  0.274650  1.4  1.800  2.00  2.300  2.5
 
+The following code shows the correlaton coefficients between different pairs of variables
+
+                              Sepal Length  Sepal Width  Petal Length  Petal Width
+Iris Class                                                                        
+Iris-setosa     Sepal Length      1.000000     0.746780      0.263874     0.279092
+                Sepal Width       0.746780     1.000000      0.176695     0.279973
+                Petal Length      0.263874     0.176695      1.000000     0.306308
+                Petal Width       0.279092     0.279973      0.306308     1.000000
+Iris-versicolor Sepal Length      1.000000     0.525911      0.754049     0.546461
+                Sepal Width       0.525911     1.000000      0.560522     0.663999
+                Petal Length      0.754049     0.560522      1.000000     0.786668
+                Petal Width       0.546461     0.663999      0.786668     1.000000
+Iris-virginica  Sepal Length      1.000000     0.457228      0.864225     0.281108
+                Sepal Width       0.457228     1.000000      0.401045     0.537728
+                Petal Length      0.864225     0.401045      1.000000     0.322108
+                Petal Width       0.281108     0.537728      0.322108     1.000000
