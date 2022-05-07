@@ -8,7 +8,6 @@
 # sepal length in cm, sepal width in cm, petal length in cm, petal length in cm
 # class: Iris Setosa, Iris Setosa, Iris Setosa
 # output a summary of each variable to a single text file
-
 # it will save a histogram of each variable to png files
 # It will output a scatter plot of each pair of variables
 # It will perform some other relevant analysis.
@@ -18,6 +17,8 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
+
 #----------------------------------------------------------------------------------------
 
 # The following code loads the iris file into a pandas dataframe and adds column headers to it.
@@ -40,7 +41,9 @@ print(summary.head())
 
 
 # The following code loads each class of iris into its own dataframe to perform analysis on
-# datafram for iris_setosa
+#------------------------------------------------------------------------------------------
+
+# Iris Setosa
 
 iris_setosa = df[df['Iris Class'] == "Iris-setosa"]    
 setosa_summary = iris_setosa.describe()
@@ -49,11 +52,15 @@ print(setosa_summary.head())
 
 #--------------------------------------------------------
 
+# Iris Vericolor
+
 iris_versicolor = df[df['Iris Class'] == "Iris-versicolor"]    
 versicolor_summary = iris_versicolor.describe()
 versicolor_summary = versicolor_summary.transpose()
 print(versicolor_summary.head())
 #---------------------------------------------------------
+
+# Iris Virginica
 
 iris_virginica = df[df['Iris Class'] == "Iris-virginica"]    
 virginica_summary = iris_virginica.describe()
@@ -67,16 +74,7 @@ print(virginica_summary.head())
 correlations = df.groupby("Iris Class").corr()
 print(correlations)
 
-
-
-
-
-
-
-
-
-
-
+#------------------------------------------------------------------------
 
 
 
@@ -105,8 +103,6 @@ plt.clf()
 
 
 
-
-#-------------------------------------------------------------------------------------------
 # The following code creates a histogram of the petal length of all the iris classes.
 
 z = df["Petal Length"] 
@@ -117,9 +113,7 @@ plt.ylabel("Count")
 plt.savefig("Petal_Length.png")
 plt.clf()
 
-#------------------------------------------------------------------------
 
-#---------------------------------------------------------------------
 # The following code creates a histogram of the petal widths of all the iris plants.
 
 
@@ -139,7 +133,7 @@ plt.clf()
 #----Sepal Length analysis written to file.---------------------------------
 
 f = open("datafile.txt", "a")
-f.write("Analysis of the Iris Fisher Data Set!\n")
+f.write("Analysis of the Iris Fisher Data Set!\n\n")
 f.write("Below is a statistical description of the complete iris data set\n\n")
 f.write(str(summary.head()) + '\n\n')
 
@@ -172,15 +166,16 @@ g = df["Petal Length"]
 h = df["Petal Width"]
 
 
-plt.scatter(e, f)
-plt.savefig("Scatterplot_Sepal.png")
-plt.clf()
-#plt.show()
 
-plt.scatter(g, h)
-plt.savefig("Scatterplot_Petal.png")
-plt.clf()
+sns.scatterplot(data=df, x="Sepal Length", y="Sepal Width")
+plt.savefig("Scatterplot_Sepal.png")
 #plt.show()
+plt.clf()
+
+sns.scatterplot(data=df, x="Petal Length", y="Petal Width")
+plt.savefig("Scatterplot_Petal.png")
+#plt.show()
+plt.clf()
 
 
 

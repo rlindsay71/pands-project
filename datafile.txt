@@ -1,4 +1,5 @@
 Analysis of the Iris Fisher Data Set!
+
 Below is a statistical description of the complete iris data set
 
               count      mean       std  min  25%   50%  75%  max
@@ -31,7 +32,7 @@ Sepal Width    50.0  2.974  0.322497  2.2  2.800  3.00  3.175  3.8
 Petal Length   50.0  5.552  0.551895  4.5  5.100  5.55  5.875  6.9
 Petal Width    50.0  2.026  0.274650  1.4  1.800  2.00  2.300  2.5
 
-The following code shows the correlaton coefficients between different pairs of variables
+The following code shows the correlation coefficients between different pairs of variables
 
                               Sepal Length  Sepal Width  Petal Length  Petal Width
 Iris Class                                                                        
