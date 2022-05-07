@@ -15,13 +15,14 @@ GMIT Programming and scripting - Final project
  output a summary of each variable to a single text file
  save a histogram of each variable to png files
  output a scatter plot of each pair of variables
- perform any other analysis you feel is relevant.
+ perform any other analysis that I feel is relevant.
 
 Objectives of code:
 
-The code for this program starts out by importing pandas for data analysis and matplotlib to help visualise my analysis. 
-I used pandas dataframes for all lot of the analysis and matplotlib for creating and displaying the histograms and scatterplots.
-Then i read in the iris data set to the program and assigned it to a dataframe.
+The code for this program starts out by importing pandas for data analysis and matplotlib and Seaborn to help visualise my analysis. 
+I used pandas dataframes for all lot of the analysis and matplotlib for creating and displaying the histograms and Seaborn for the scatterplots.
+
+The first step was to read in the iris data set to the program and assigned it to a dataframe.
 I created headers for the iris dataframe to make it easier to navigate and analyse.
 Then I passed the data file in as an argument to the pandas dataframe to create a dataframe containing the entire file.
 I created smaller data frames from this original dataframe with just the iris class and the variable I was trying to analysis
@@ -31,8 +32,9 @@ then I used the mean, max, min and median functions to created variables from th
 
 Doing all of the above was great practise in working with variables but the coding was quite laborious with way to many
 write() functions. I felt that this was a good place to start and get some basic analysis pinned down.
-I was aware of the describe() method of dataframes that could output much quicker all the measurements I needed,
-(min, max, mean std dev etc)  with way less code than previously used!
+I decided to revise the above and use the describe() method to output the information I needed,
+(min, max, mean std dev etc)  with way less code than previously used and a much tidier output.  
+
 
 The groupby() and corr() functions were very useful in outputting the correlation coeficcients in an organised table type format.
 
@@ -41,6 +43,27 @@ and the scatterplot for each pair of variables (sepal width & height, and petal 
 
 Finally I wrote my analysis and observations to a text file called datafile.txt using using the open() function to create the file
 and the write() to write my data analysis to it.
+
+
+Findings:
+
+
+
+Iris Setosa  has on average significantly shorter sepals than the other two species
+but they are on average a bit wider.
+Iris Setosa seems to have far smaller petals, both width and lengthwise, than the other classes.
+Iris Versicolor has longer but thinner sepals than Iris Setosa
+but overall they are smaller than Iris Virginica, so this species seems to lie in the middle
+of the three.  Its petal size, both length and width are again larger than Iris Setosa but smaller
+than Iris Virginica, which in terms of both its petals and sepals dimensions is on average the largest
+of the three species.
+
+With Iris Setosa, there is a strong corelation between the sepal width and length at about 0.704
+but a weaker correction between the petal width and length at 0.306
+With Iris Verisicolr there is a strong correlation between petal and sepal length 0.754
+and also between petal width and length 0.786.
+With Iris Virginica there is a definite strong correlation between sepal and petal length 0.864
+
 
 
 
@@ -53,15 +76,13 @@ https://www.w3schools.com/python/pandas/default.asp
 This module in W3 schools was a very helpful resource on how to use pandas, read and write to text files and manipulate dataframes.
 The extra pandas lecture on the GMIT course was a great help trying to get to grips with pandas and its features.
 to be continued......
-https://www.angela1c.com/projects/iris_project/investigating-the-iris-dataset/
-This resource that I came across while searching the web helped me with the  describe() function of dataframes in Panda and helped me to cut down
-my previous lines of code and make it more organised in order to show the main statistics for each variable.
-
-Some good resources for using Seaborn which i hadn't really used to date.
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html
 https://seaborn.pydata.org/introduction.html
 https://python-graph-gallery.com/20-basic-histogram-seaborn
 https://seaborn.pydata.org/generated/seaborn.scatterplot.html
 https://www.adamsmith.haus/python/answers/how-to-display-a-seaborn-plot-in-python
+
+
 
 
  

@@ -133,8 +133,8 @@ plt.clf()
 #----Sepal Length analysis written to file.---------------------------------
 
 f = open("datafile.txt", "a")
-f.write("Analysis of the Iris Fisher Data Set!\n\n")
-f.write("Below is a statistical description of the complete iris data set\n\n")
+f.write("Analysis of Fishers Iris Data Set\n\n")
+f.write("Below is an overall statistical description of the complete iris data set\n\n")
 f.write(str(summary.head()) + '\n\n')
 
 f.write("Below is a statistical description of the iris setosa species\n\n")
@@ -146,8 +146,26 @@ f.write(str(versicolor_summary.head()) + '\n\n')
 f.write("Below is a statistical description of the iris virginica species\n\n")
 f.write(str(virginica_summary.head()) + '\n\n')
 
+f.write("Observations\n\n")
+f.write("Iris Setosa  has on average significantly shorter sepals than the other two species\n")
+f.write("but they are on average a bit wider.\n")
+f.write("Iris Setosa seems to have far smaller petals, both width and lengthwise, than the other classes.\n")
+f.write("Iris Versicolor has longer but thinner sepals than Iris Setosa\n")
+f.write("but overall they are smaller than Iris Virginica, so this species seems to lie in the middle\n")
+f.write("of the three.  Its petal size, both length and width are again larger than Iris Setosa but smaller\n")
+f.write("than Iris Virginica, which in terms of both its petals and sepals dimensions is on average the largest\n")
+f.write("of the three species.\n\n\n")
+
 f.write("The following code shows the correlation coefficients between different pairs of variables\n\n")
-f.write(str(correlations))
+f.write(str(correlations) + '\n\n')
+f.write("Observations\n\n")
+f.write("With Iris Setosa, there is a strong correlation between the sepal width and length at about 0.704\n")
+f.write("but a weaker correction between the petal width and length at 0.306\n")
+f.write("With Iris Verisicolr there is a strong correlation between petal and sepal length 0.754\n")
+f.write("and also between petal width and length 0.786.\n")
+f.write("With Iris Virginica there is a definite strong correlation between sepal and petal length 0.864\n")
+
+
 
 
 f.close()

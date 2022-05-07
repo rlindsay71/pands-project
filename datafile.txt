@@ -1,55 +1,6 @@
-Analysis of the Iris Fisher Data Set!
+Analysis of Fishers Iris Data Set
 
-Below is a statistical description of the complete iris data set
-
-              count      mean       std  min  25%   50%  75%  max
-Sepal Length  150.0  5.843333  0.828066  4.3  5.1  5.80  6.4  7.9
-Sepal Width   150.0  3.054000  0.433594  2.0  2.8  3.00  3.3  4.4
-Petal Length  150.0  3.758667  1.764420  1.0  1.6  4.35  5.1  6.9
-Petal Width   150.0  1.198667  0.763161  0.1  0.3  1.30  1.8  2.5
-
-Below is a statistical description of the iris setosa species
-
-              count   mean       std  min    25%  50%    75%  max
-Sepal Length   50.0  5.006  0.352490  4.3  4.800  5.0  5.200  5.8
-Sepal Width    50.0  3.418  0.381024  2.3  3.125  3.4  3.675  4.4
-Petal Length   50.0  1.464  0.173511  1.0  1.400  1.5  1.575  1.9
-Petal Width    50.0  0.244  0.107210  0.1  0.200  0.2  0.300  0.6
-
-Below is a statistical description of the iris versicolor species
-
-              count   mean       std  min    25%   50%  75%  max
-Sepal Length   50.0  5.936  0.516171  4.9  5.600  5.90  6.3  7.0
-Sepal Width    50.0  2.770  0.313798  2.0  2.525  2.80  3.0  3.4
-Petal Length   50.0  4.260  0.469911  3.0  4.000  4.35  4.6  5.1
-Petal Width    50.0  1.326  0.197753  1.0  1.200  1.30  1.5  1.8
-
-Below is a statistical description of the iris virginica species
-
-              count   mean       std  min    25%   50%    75%  max
-Sepal Length   50.0  6.588  0.635880  4.9  6.225  6.50  6.900  7.9
-Sepal Width    50.0  2.974  0.322497  2.2  2.800  3.00  3.175  3.8
-Petal Length   50.0  5.552  0.551895  4.5  5.100  5.55  5.875  6.9
-Petal Width    50.0  2.026  0.274650  1.4  1.800  2.00  2.300  2.5
-
-The following code shows the correlation coefficients between different pairs of variables
-
-                              Sepal Length  Sepal Width  Petal Length  Petal Width
-Iris Class                                                                        
-Iris-setosa     Sepal Length      1.000000     0.746780      0.263874     0.279092
-                Sepal Width       0.746780     1.000000      0.176695     0.279973
-                Petal Length      0.263874     0.176695      1.000000     0.306308
-                Petal Width       0.279092     0.279973      0.306308     1.000000
-Iris-versicolor Sepal Length      1.000000     0.525911      0.754049     0.546461
-                Sepal Width       0.525911     1.000000      0.560522     0.663999
-                Petal Length      0.754049     0.560522      1.000000     0.786668
-                Petal Width       0.546461     0.663999      0.786668     1.000000
-Iris-virginica  Sepal Length      1.000000     0.457228      0.864225     0.281108
-                Sepal Width       0.457228     1.000000      0.401045     0.537728
-                Petal Length      0.864225     0.401045      1.000000     0.322108
-                Petal Width       0.281108     0.537728      0.322108     1.000000Analysis of the Iris Fisher Data Set!
-
-Below is a statistical description of the complete iris data set
+Below is an overall statistical description of the complete iris data set
 
               count      mean       std  min  25%   50%  75%  max
 Sepal Length  150.0  5.843333  0.828066  4.3  5.1  5.80  6.4  7.9
@@ -80,6 +31,18 @@ Sepal Length   50.0  6.588  0.635880  4.9  6.225  6.50  6.900  7.9
 Sepal Width    50.0  2.974  0.322497  2.2  2.800  3.00  3.175  3.8
 Petal Length   50.0  5.552  0.551895  4.5  5.100  5.55  5.875  6.9
 Petal Width    50.0  2.026  0.274650  1.4  1.800  2.00  2.300  2.5
+
+Observations
+
+Iris Setosa  has on average significantly shorter sepals than the other two species
+but they are on average a bit wider.
+Iris Setosa seems to have far smaller petals, both width and lengthwise, than the other classes.
+Iris Versicolor has longer but thinner sepals than Iris Setosa
+but overall they are smaller than Iris Virginica, so this species seems to lie in the middle
+of the three.  Its petal size, both length and width are again larger than Iris Setosa but smaller
+than Iris Virginica, which in terms of both its petals and sepals dimensions is on average the largest
+of the three species.
+
 
 The following code shows the correlation coefficients between different pairs of variables
 
@@ -97,3 +60,11 @@ Iris-virginica  Sepal Length      1.000000     0.457228      0.864225     0.2811
                 Sepal Width       0.457228     1.000000      0.401045     0.537728
                 Petal Length      0.864225     0.401045      1.000000     0.322108
                 Petal Width       0.281108     0.537728      0.322108     1.000000
+
+Observations
+
+With Iris Setosa, there is a strong correlation between the sepal width and length at about 0.704
+but a weaker correction between the petal width and length at 0.306
+With Iris Verisicolr there is a strong correlation between petal and sepal length 0.754
+and also between petal width and length 0.786.
+With Iris Virginica there is a definite strong correlation between sepal and petal length 0.864
