@@ -167,12 +167,12 @@ h = df["Petal Width"]
 
 
 
-sns.scatterplot(data=df, x="Sepal Length", y="Sepal Width")
+sns.scatterplot(data=df, x="Sepal Length", y="Sepal Width", hue="Iris Class")
 plt.savefig("Scatterplot_Sepal.png")
 #plt.show()
 plt.clf()
 
-sns.scatterplot(data=df, x="Petal Length", y="Petal Width")
+sns.scatterplot(data=df, x="Petal Length", y="Petal Width", hue="Iris Class")
 plt.savefig("Scatterplot_Petal.png")
 #plt.show()
 plt.clf()

@@ -39,7 +39,8 @@ The groupby() and corr() functions were very useful in outputting the correlatio
 I used matplotlib and Seaborn to help visualise the data in the form of histograms for the individual variables (width, height..)
 and the scatterplot for each pair of variables (sepal width & height, and petal width and height.
 
-
+Finally I wrote my analysis and observations to a text file called datafile.txt using using the open() function to create the file
+and the write() to write my data analysis to it.
 
 
 
@@ -47,14 +48,14 @@ Resources:
 https://www.w3schools.com/python/
 I found this website terrific for general learning of python syntax to supplement my GMIT lectures.
 https://www.w3schools.com/python/python_file_write.asp
-This section of w3schools helped a lot with the syntax of how to write to a file. GMIT
+This section of w3schools helped a lot with the syntax of how to write to a file. 
 https://www.w3schools.com/python/pandas/default.asp
 This module in W3 schools was a very helpful resource on how to use pandas, read and write to text files and manipulate dataframes.
 The extra pandas lecture on the GMIT course was a great help trying to get to grips with pandas and its features.
 to be continued......
 https://www.angela1c.com/projects/iris_project/investigating-the-iris-dataset/
-this was a helpful resource when it came to the describe() function of dataframes in Panda and helped me to cut down
-my lines of code and make it more organised in order to show the main statistics for each variable.
+This resource that I came across while searching the web helped me with the  describe() function of dataframes in Panda and helped me to cut down
+my previous lines of code and make it more organised in order to show the main statistics for each variable.
 
 Some good resources for using Seaborn which i hadn't really used to date.
 https://seaborn.pydata.org/introduction.html
