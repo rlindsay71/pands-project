@@ -75,7 +75,6 @@ This section of w3schools helped a lot with the syntax of how to write to a file
 https://www.w3schools.com/python/pandas/default.asp
 This module in W3 schools was a very helpful resource on how to use pandas, read and write to text files and manipulate dataframes.
 The extra pandas lecture on the GMIT course was a great help trying to get to grips with pandas and its features.
-to be continued......
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html
 https://seaborn.pydata.org/introduction.html
 https://python-graph-gallery.com/20-basic-histogram-seaborn
